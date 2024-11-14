@@ -10,7 +10,7 @@ public class DBConnection {
     public static Connection getConnection() {
         if (connection == null) {
             try {
-                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "password"); // Update password
+                connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/event_management", "root", "Aditya@1"); // Update password
             } catch (SQLException e) {
                 e.printStackTrace();
             }
