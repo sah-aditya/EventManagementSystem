@@ -1,0 +1,60 @@
+package services;
+
+import models.Resource;
+import org.junit.jupiter.api.Test;
+
+import java.util.List;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+public class ResourceServiceTest {
+
+    @Test
+    public void testBookResource() {
+        ResourceService resourceService = new ResourceService();
+        Resource resource = new Resource(0, "Test Resource", 1);
+        resourceService.bookResource(resource);
+        assertNotNull(resourceService.getResourceById(resource.getId()));
+    }
+
+    @Test
+    public void testGetResourceById() {
+        ResourceService resourceService = new ResourceService();
+        Resource resource = new Resource(0, "Test Resource", 1);
+        resourceService.bookResource(resource);
+        Resource retrievedResource = resourceService.getResourceById(resource.getId());
+        assertEquals(resource.getName(), retrievedResource.getName());
+        assertEquals(resource.getEventId(), retrievedResource.getEventId());
+    }
+
+    @Test
+    public void testGetAllResources() {
+        ResourceService resourceService = new ResourceService();
+        Resource resource1 = new Resource(0, "Test Resource 1", 1);
+        Resource resource2 = new Resource(0, "Test Resource 2", 2);
+        resourceService.bookResource(resource1);
+        resourceService.bookResource(resource2);
+        List<Resource> resources = resourceService.getAllResources();
+        assertEquals(2, resources.size());
+    }
+
+    @Test
+    public void testUpdateResource() {
+        ResourceService resourceService = new ResourceService();
+        Resource resource = new Resource(0, "Test Resource", 1);
+        resourceService.bookResource(resource);
+        resource.setName("Updated Test Resource");
+        resourceService.updateResource(resource);
+        Resource retrievedResource = resourceService.getResourceById(resource.getId());
+        assertEquals(resource.getName(), retrievedResource.getName());
+    }
+
+    @Test
+    public void testDeleteResource() {
+        ResourceService resourceService = new ResourceService();
+        Resource resource = new Resource(0, "Test Resource", 1);
+        resourceService.bookResource(resource);
+        resourceService.deleteResource(resource.getId());
+        assertNull(resourceService.getResourceById(resource.getId()));
+    }
+}

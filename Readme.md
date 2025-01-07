@@ -116,31 +116,44 @@ public static final String PASSWORD = "your_mysql_password";
 ```plaintext
 EventManagementSystem/
 ├── src/
-│   ├── models/
-│   │   ├── Event.java
-│   │   ├── Resource.java
-│   │   └── User.java
-│   ├── services/
-│   │   ├── DBConnection.java
-│   │   ├── EventService.java
-│   │   ├── ResourceService.java
-│   │   └── UserService.java
-│   ├── servlets/
-│   │   ├── LoginServlet.java
-│   │   ├── ProfileServlet.java
-│   │   └── RegisterServlet.java
-│   └── utils/
-│       └── EventManagementSystem.java
+│   ├── main/
+│   │   ├── models/
+│   │   │   ├── Event.java
+│   │   │   ├── Resource.java
+│   │   │   └── User.java
+│   │   ├── services/
+│   │   │   ├── DBConnection.java
+│   │   │   ├── UserService.java
+│   │   │   ├── EventService.java
+│   │   │   └── ResourceService.java
+│   │   ├── servlets/
+│   │   │   ├── LoginServlet.java
+│   │   │   ├── ProfileServlet.java
+│   │   │   └── RegisterServlet.java
+│   │   └── utils/
+│   │       └── ReportGenerator.java
+│   ├── test/
+│   │   
+├── frontend/
+│   ├── css/
+│   │   └── styles.css
+│   ├── js/
+│   │   └── scripts.js
+│   ├── login.html
+│   ├── register.html
+│   └── dashboard.html
+├── lib/
+│   └── mysql-connector-java-8.0.26.jar
 ├── resources/
 │   ├── static/
 │   │   ├── css/
 │   │   │   └── styles.css
 │   │   ├── js/
-│   │   │   └── scripts.js
-│   ├── templates/
-│   │   ├── dashboard.html
-│   │   ├── login.html
-│   │   └── register.html
+│   │   │   └── script.js
+│   │   └── templates/
+│   │       ├── dashboard.html
+│   │       ├── login.html
+│   │       └── register.html
 │   └── webapp.WEB-INF/
 │       └── jsp/
 │           ├── dashboard.jsp
@@ -148,10 +161,9 @@ EventManagementSystem/
 │           ├── login.jsp
 │           ├── profile.jsp
 │           └── register.jsp
-├── lib/
-│   └── mysql-connector-java-x.x.x.jar
-├── event_management.sql
-└── pom.xml
+├── README.md
+├── pom.xml
+└── LICENSE
 ```
 
 ---

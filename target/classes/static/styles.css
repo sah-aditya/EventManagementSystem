@@ -1,0 +1,15 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.card {
+    border: none;
+}
+
+.card h3 {
+    color: #007bff;
+}
+
+.navbar-brand {
+    font-weight: bold;
+}
