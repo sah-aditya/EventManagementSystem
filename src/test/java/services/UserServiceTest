@@ -1,0 +1,37 @@
+import org.junit.Before;
+import org.junit.Test;
+import static org.junit.Assert.*;
+
+public class UserServiceTest {
+
+    private UserService userService;
+
+    @Before
+    public void setup() {
+        userService = new UserService();
+    }
+
+    @Test
+    public void testLogin() {
+        boolean result = userService.login("testUser ", "testPassword");
+        assertTrue(result);
+    }
+
+    @Test
+    public void testRegister() {
+        boolean result = userService.register("newUser ", "newPassword");
+        assertTrue(result);
+    }
+
+    @Test
+    public void testGetUser ByUsername() {
+        User user = userService.getUserByUsername("testUser ");
+        assertNotNull(user);
+    }
+
+    @Test
+    public void testGetAllUsers() {
+        List<User> users = userService.getAllUsers();
+        assertNotNull(users);
+    }
+}
